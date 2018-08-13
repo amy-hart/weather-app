@@ -6,7 +6,7 @@ import moment from 'moment';
 const ForecastSummary = props => (
   <div className="forecast-summary">
     <div className="date">
-      <span>{moment(props.date).format('ddd do MMM')}</span>
+      <span>{moment(props.date).format('ddd Do MMM')}</span>
     </div>
     <div className="temperature">
       <span>{props.temperature}&#8451;</span>
