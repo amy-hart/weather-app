@@ -5,17 +5,17 @@ import moment from 'moment';
 const ForecastDetails = props => (
   <div className="forecast-summary">
     <div className="date">
-      <span>{moment(props.date).format('ddd do MMM')}</span>
+      <span>{moment(props.forecast.date).format('ddd Do MMM')}</span>
     </div>
     <div className="maxTemperature">
-      <span>{props.temperature}&#8451;</span><br />
-      <span>{props.minTemperature}&#8451;</span>
+      <span>{props.forecast.temperature.max}&#8451;</span><br />
+      <span>{props.forecast.temperature.min}&#8451;</span>
     </div>
     <div className="humidity">
-      <span>{props.humidity}%</span>
+      <span>{props.forecast.humidity}%</span>
     </div>
     <div className="wind">
-        <span>{props.windSpeed}mph {props.windDirection}</span>
+      <span>{props.forecast.wind.speed}mph {props.forecast.wind.direction}</span>
     </div>
   </div>
 );
@@ -26,11 +26,11 @@ ForecastDetails.propTypes = {
   minTemperature: PropTypes.number.isRequired,
   humidity: PropTypes.number.isRequired,
   windSpeed: PropTypes.number.isRequired,
-  windDirection: PropTypes.number.isRequired,
+  windDirection: PropTypes.string.isRequired,
 };
 
 ForecastDetails.defaultProps = {
-  date: 1525132800000,
+  date: 1543622400,
   temperature: 21,
   minTemperature: 4,
   humidity: 70,

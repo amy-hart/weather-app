@@ -9,25 +9,34 @@ import '../styles/app.scss';
 import '../styles/forecast-summaries.scss';
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-
+    
     this.state = {
-      selectDate: this.props.forecasts[0].date,
+      selectedDate: this.props.forecasts[0].date,
     };
+
+    this.handleForecastSelect = this.handleForecastSelect.bind(this);
+  }
+
+  handleForecastSelect(date) {
+    this.setState({
+      selectedDate: date,
+    });
   }
 
   render() {
-    const selectedForceast = this.props.forecasts.find(forecast => forecast.date === this.state.selectDate);
+    const selectedForecast = this.props.forecasts.find(forecast => forecast.date === this.state.selectedDate);
     return (
       <div className="forecast">
         <LocationDetails
-          city={props.location.city}
-          country={props.location.country}
+          city={this.props.location.city}
+          country={this.props.location.country}
         />
-        <ForecastSummaries forecasts={props.forecasts} />
-        <ForecastDetails forecast={selectedForecast} /></div>  
-    ); 
+        <ForecastSummaries forecasts={this.props.forecasts} onForecastSelect={this.handleForecastSelect} />
+        <ForecastDetails forecast={selectedForecast} />
+      </div>
+    );
   }
 }
 
@@ -40,4 +49,3 @@ App.propTypes = {
 };
 
 export default App;
-

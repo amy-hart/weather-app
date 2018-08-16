@@ -19,6 +19,9 @@ const ForecastSummary = props => (
         <WeatherIcon name="owm" iconId={props.icon} />
       </div>
     </div>
+    <div className="view-more-button">
+      <button type="button" onClick={() => props.onSelect(props.date)}>More Details</button>
+    </div>
   </div>
 );
 
@@ -28,6 +31,7 @@ ForecastSummary.propTypes = {
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   city: PropTypes.string,
+  onSelect: PropTypes.func,
 };
 
 ForecastSummary.defaultProps = {
