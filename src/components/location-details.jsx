@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const LocationDetails = props => <h1>{`${props.city}, ${props.country}`}</h1>;
+const LocationDetails = props => <h1>&#9728; HartWeather  - {`${props.city}, ${props.country}`}</h1>;
 
 LocationDetails.propTypes = {
   city: PropTypes.string.isRequired,

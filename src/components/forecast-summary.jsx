@@ -5,30 +5,31 @@ import moment from 'moment';
 
 const ForecastSummary = props => (
   <div className="forecast-summary">
-    Potato: {props.potato}
     <div className="date">
-     {props.date}
+      <span>{moment(props.date).format('ddd Do MMM')}</span>
     </div>
     <div className="temperature">
-      max temp
+      <span>{props.temperature}&#8451;</span>
     </div>
     <div className="description">
-      description
+      <span>{props.description}</span>
     </div>
     <div className="icon">
       <div className="forecast-summary__icon">
-        icon
+        <WeatherIcon name="owm" iconId={props.icon} />
       </div>
     </div>
     <div className="view-more-button">
-      button
-    </div>
+      <button type="button" onClick={() => props.onSelect(props.date)}>
+        More Details
+      </button>
+    </div>  
   </div>
 );
 
 ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
-  temperature: PropTypes.object.isRequired,
+  temperature: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   city: PropTypes.string,
@@ -46,25 +47,3 @@ ForecastSummary.defaultProps = {
 };
 
 export default ForecastSummary;
-
-/*
-<div className="date">
-      <span>{moment(props.date).format('ddd Do MMM')}</span>
-    </div>
-    <div className="temperature">
-   
-    </div>
-    <div className="description">
-      <span>{props.description}</span>
-    </div>
-    <div className="icon">
-      <div className="forecast-summary__icon">
-        <WeatherIcon name="owm" iconId={props.icon} />
-      </div>
-    </div>
-    <div className="view-more-button">
-   
-    </div>
-
-
-*/

@@ -19,7 +19,7 @@ class App extends React.Component {
         country: '',
       },
       selectedDate: 0,
-      forecasts: [{}],
+      forecasts: [],
     };
 
     this.handleForecastSelect = this.handleForecastSelect.bind(this);
@@ -39,7 +39,10 @@ class App extends React.Component {
           city={this.state.location.city}
           country={this.state.location.country}
         />
-        <ForecastSummaries forecasts={this.state.forecasts} onForecastSelect={this.handleForecastSelect} potato="potato1" />
+        <ForecastSummaries forecasts={this.state.forecasts} onForecastSelect={this.handleForecastSelect}/>
+        {
+        selectedForecast && <ForecastDetails forecast={selectedForecast} />
+        }
       
         {
           //selectedForecast && <ForecastDetails forecast={selectedForecast} />
