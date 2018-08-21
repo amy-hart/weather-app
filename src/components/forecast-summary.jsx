@@ -9,7 +9,7 @@ const ForecastSummary = props => (
       <span>{moment(props.date).format('ddd Do MMM')}</span>
     </div>
     <div className="temperature">
-      <span>{props.temperature}&#8451;</span>
+   
     </div>
     <div className="description">
       <span>{props.description}</span>
@@ -20,14 +20,14 @@ const ForecastSummary = props => (
       </div>
     </div>
     <div className="view-more-button">
-      <button type="button" onClick={() => props.onSelect(props.date)}>More Details</button>
+   
     </div>
   </div>
 );
 
 ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
-  temperature: PropTypes.number.isRequired,
+  temperature: PropTypes.object.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   city: PropTypes.string,
@@ -36,7 +36,10 @@ ForecastSummary.propTypes = {
 
 ForecastSummary.defaultProps = {
   date: 18031991,
-  temperature: 21,
+  temperature: {
+    max: 21,
+    min: 13
+  },
   description: 'Description',
   icon: 'Icon800',
 };

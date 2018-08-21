@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import axios from 'axios';
+
 
 import LocationDetails from '../components/location-details';
 import ForecastSummaries from '../components/forecast-summaries';
@@ -9,43 +10,57 @@ import '../styles/app.scss';
 import '../styles/forecast-summaries.scss';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     
     this.state = {
-      selectedDate: this.props.forecasts[0].date,
+      location: {
+        city: "",
+        country: "",
+      },
+      selectedDate: 0,
+      forecasts: [{}]
     };
 
-    this.handleForecastSelect = this.handleForecastSelect.bind(this);
+   // this.handleForecastSelect = this.handleForecastSelect.bind(this);
   }
 
+  /*
   handleForecastSelect(date) {
     this.setState({
       selectedDate: date,
     });
   }
+  */
 
   render() {
-    const selectedForecast = this.props.forecasts.find(forecast => forecast.date === this.state.selectedDate);
+    //const selectedForecast = this.state.forecasts.find(forecast => forecast.date === this.state.selectedDate);
     return (
       <div className="forecast">
         <LocationDetails
-          city={this.props.location.city}
-          country={this.props.location.country}
+          city={this.state.location.city}
+          country={this.state.location.country}
         />
-        <ForecastSummaries forecasts={this.props.forecasts} onForecastSelect={this.handleForecastSelect} />
-        <ForecastDetails forecast={selectedForecast} />
+        <ForecastSummaries forecasts={this.state.forecasts} onForecastSelect={this.handleForecastSelect} potato="potato" />
+      
+        {
+          //selectedForecast && <ForecastDetails forecast={selectedForecast} />
+        }
       </div>
     );
   }
-}
 
-App.propTypes = {
-  location: PropTypes.shape({
-    city: PropTypes.string,
-    country: PropTypes.string,
-  }).isRequired,
-  forecasts: PropTypes.array.isRequired,
-};
+  componentDidMount() {
+    axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=Manchester')
+    .then(res => {
+      const forecasts = res.data.forecasts;
+      const location = res.data.location;
+      this.setState({
+        forecasts: forecasts,
+        location: location,
+      });
+    })
+  }
+}
 
 export default App;
