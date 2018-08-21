@@ -15,33 +15,31 @@ class App extends React.Component {
     
     this.state = {
       location: {
-        city: "",
-        country: "",
+        city: '',
+        country: '',
       },
       selectedDate: 0,
-      forecasts: [{}]
+      forecasts: [{}],
     };
 
-   // this.handleForecastSelect = this.handleForecastSelect.bind(this);
+    this.handleForecastSelect = this.handleForecastSelect.bind(this);
   }
 
-  /*
   handleForecastSelect(date) {
     this.setState({
       selectedDate: date,
     });
   }
-  */
-
+  
   render() {
-    //const selectedForecast = this.state.forecasts.find(forecast => forecast.date === this.state.selectedDate);
+    const selectedForecast = this.state.forecasts.find(forecast => forecast.date === this.state.selectedDate);
     return (
       <div className="forecast">
         <LocationDetails
           city={this.state.location.city}
           country={this.state.location.country}
         />
-        <ForecastSummaries forecasts={this.state.forecasts} onForecastSelect={this.handleForecastSelect} potato="potato" />
+        <ForecastSummaries forecasts={this.state.forecasts} onForecastSelect={this.handleForecastSelect} potato="potato1" />
       
         {
           //selectedForecast && <ForecastDetails forecast={selectedForecast} />
@@ -51,15 +49,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=Manchester')
-    .then(res => {
+    axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=Manchester').then(res => {
       const forecasts = res.data.forecasts;
       const location = res.data.location;
       this.setState({
         forecasts: forecasts,
         location: location,
       });
-    })
+    });
   }
 }
 

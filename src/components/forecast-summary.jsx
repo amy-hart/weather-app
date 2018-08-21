@@ -5,22 +5,23 @@ import moment from 'moment';
 
 const ForecastSummary = props => (
   <div className="forecast-summary">
+    Potato: {props.potato}
     <div className="date">
-      <span>{moment(props.date).format('ddd Do MMM')}</span>
+     {props.date}
     </div>
     <div className="temperature">
-   
+      max temp
     </div>
     <div className="description">
-      <span>{props.description}</span>
+      description
     </div>
     <div className="icon">
       <div className="forecast-summary__icon">
-        <WeatherIcon name="owm" iconId={props.icon} />
+        icon
       </div>
     </div>
     <div className="view-more-button">
-   
+      button
     </div>
   </div>
 );
@@ -45,3 +46,25 @@ ForecastSummary.defaultProps = {
 };
 
 export default ForecastSummary;
+
+/*
+<div className="date">
+      <span>{moment(props.date).format('ddd Do MMM')}</span>
+    </div>
+    <div className="temperature">
+   
+    </div>
+    <div className="description">
+      <span>{props.description}</span>
+    </div>
+    <div className="icon">
+      <div className="forecast-summary__icon">
+        <WeatherIcon name="owm" iconId={props.icon} />
+      </div>
+    </div>
+    <div className="view-more-button">
+   
+    </div>
+
+
+*/
