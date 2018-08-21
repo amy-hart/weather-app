@@ -43,10 +43,7 @@ class App extends React.Component {
         {
         selectedForecast && <ForecastDetails forecast={selectedForecast} />
         }
-      
-        {
-          //selectedForecast && <ForecastDetails forecast={selectedForecast} />
-        }
+        {console.log("Look Ma, no hands!")}
       </div>
     );
   }
