@@ -1,10 +1,16 @@
 # HartWeather
+
+HartWeather is a weather app built using React, and the Manchester Codes weather API. 
+
+I completed this project during my time as a student on the Manchester Codes part-time coding bootcamp. This project helped me to get to grips with React, unit testing, and getting to grips with fetching external data from APIs.
+
+Screenshot:
 ![A screenshot of the HartWeather application](https://pbs.twimg.com/media/DlJEQUuWsAQSSNG.jpg)
 
-# Installation
-These installation instructions assume that you already have Node.js, and the NPM package manager installed on your machine. You'll also need to have Expo installed on your machine, along with an Android/ iOS simulator, or the Expo application for your Android/ iOS mobile device.
+Manchester Codes Weather API:
+https://mcr-codes-weather.herokuapp.com/
 
-1. Clone down the repo:
+# Installation
 ```{r, engine='bash', count_lines}
 git clone git@github.com:amy-hart/weather-app.git
 ```
