@@ -8,6 +8,7 @@ Screenshot:
 ![A screenshot of the HartWeather application](https://pbs.twimg.com/media/DlJEQUuWsAQSSNG.jpg)
 
 Manchester Codes Weather API:
+
 https://mcr-codes-weather.herokuapp.com/
 
 # Installation
