@@ -1,5 +1,5 @@
 # HartWeather
-[![A screenshot of the HartWeather application](https://pbs.twimg.com/media/DlJEQUuWsAQSSNG.jpg)]
+![A screenshot of the HartWeather application](https://pbs.twimg.com/media/DlJEQUuWsAQSSNG.jpg)
 
 # Installation
 These installation instructions assume that you already have Node.js, and the NPM package manager installed on your machine. You'll also need to have Expo installed on your machine, along with an Android/ iOS simulator, or the Expo application for your Android/ iOS mobile device.
