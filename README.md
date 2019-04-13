@@ -1,33 +1,23 @@
-# React Bootstrap
+# Hart Weather
 
-React boilerplate project for Manchester Codes' projects.
+# Installation
+These installation instructions assume that you already have Node.js, and the NPM package manager installed on your machine. You'll also need to have Expo installed on your machine, along with an Android/ iOS simulator, or the Expo application for your Android/ iOS mobile device.
 
-## Getting Started
-
-### Clone down this repository (replace `<your_project_name>`:
-
-```bash
-git clone git@github.com:MCRcodes/react-bootstrap.git <your_project_name>
+1. Clone down the repo:
+```{r, engine='bash', count_lines}
+git clone git@github.com:amy-hart/weather-app.git
 ```
-
-### Install dependencies
-
-```bash
-npm i
+2. Install any dependencies: 
+```{r, engine='bash', count_lines}
+npm install
 ```
-
-### Start up the application:
-
-```bash
+3. Move into the 'weather-app' directory:
+```{r, engine='bash', count_lines}
+cd weather-app
+```
+4. Start the app:
+```{r, engine='bash', count_lines}
 npm start
 ```
-
-### Visit `localhost:8080` in your browser.
-
-You should see a **Hello World** message.
-
-### Change the rendered output
-
-You can change what is mounted to the DOM in `src/index.jsx`. 
-
-It might be a good idea to make an `App` component inside `App.jsx` (will likely handle your layout and routing), and to mount this to the DOM.
+5. Open the app in your browser by visitting:
+http://localhost:8080/
