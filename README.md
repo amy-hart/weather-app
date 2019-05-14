@@ -1,13 +1,11 @@
 # HartWeather
 
-HartWeather is a weather app built using React, and the Manchester Codes weather API. 
-
-I completed this project during my time as a student on the Manchester Codes part-time coding bootcamp. This project helped me to get to grips with React, unit testing, and getting to grips with fetching external data from APIs.
+HartWeather is a weather app built using React and an external weather API. 
 
 Screenshot:
 ![A screenshot of the HartWeather application](https://pbs.twimg.com/media/DlJEQUuWsAQSSNG.jpg)
 
-Manchester Codes Weather API:
+Weather API:
 https://mcr-codes-weather.herokuapp.com/
 
 
